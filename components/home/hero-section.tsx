@@ -29,21 +29,22 @@ export function HeroSection() {
         </svg>
       </div>
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Left: Centered Logo, Headline, Description, Buttons */}
-          <div className="flex-1 flex flex-col items-center justify-center space-y-8 text-center">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="bg-gradient-to-tr from-lime-400 to-emerald-400 rounded-full p-5 shadow-lg mb-2 animate-fade-in">
-                <Leaf className="h-16 w-16 text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left: Logo, Headline, Description, Buttons */}
+          <div className="flex flex-col items-start space-y-8">
+            <div className="flex items-center mb-2">
+              <div className="bg-gradient-to-tr from-lime-400 to-emerald-400 rounded-full p-4 shadow-lg">
+                <Leaf className="h-14 w-14 text-white" />
               </div>
-              <h1 className="text-5xl lg:text-6xl font-extrabold text-emerald-900 leading-tight animate-slide-up" style={{fontFamily: 'Poppins, Inter, sans-serif'}}>
-                Fresh <span className="text-lime-600">Organic</span> Goodness<br />for a <span className="text-amber-600">Healthier</span> You
-              </h1>
-              <p className="text-lg text-emerald-800 max-w-xl mx-auto animate-fade-in-delay" style={{fontFamily: 'Inter, sans-serif'}}>
-                Discover our curated range of organic fruits, veggies, and eco-friendly products. Sustainably sourced, naturally grown, and delivered fresh to your door.
-              </p>
+              <span className="ml-4 text-3xl font-extrabold text-emerald-700 tracking-tight" style={{fontFamily: 'Poppins, Inter, sans-serif'}}>Organin</span>
             </div>
-            <div className="flex gap-4 justify-center animate-fade-in-delay2">
+            <h1 className="text-5xl lg:text-6xl font-extrabold text-emerald-900 leading-tight" style={{fontFamily: 'Poppins, Inter, sans-serif'}}>
+              Fresh <span className="text-lime-600">Organic</span> Goodness<br />for a <span className="text-amber-600">Healthier</span> You
+            </h1>
+            <p className="text-lg text-emerald-800 max-w-lg" style={{fontFamily: 'Inter, sans-serif'}}>
+              Discover our curated range of organic fruits, veggies, and eco-friendly products. Sustainably sourced, naturally grown, and delivered fresh to your door.
+            </p>
+            <div className="flex gap-4">
               <Link href="/shop">
                 <Button size="lg" className="bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white shadow font-semibold tracking-wide">
                   Shop Now
@@ -56,8 +57,22 @@ export function HeroSection() {
                 </Button>
               </Link>
             </div>
+          </div>
+
+          {/* Right: Product Image and Features */}
+          <div className="flex flex-col items-center w-full space-y-8">
+            <div className="relative w-full flex justify-center mb-4">
+              <Image
+                src="/placeholder.svg?height=400&width=400"
+                alt="Fresh organic vegetables and fruits"
+                width={400}
+                height={400}
+                className="rounded-3xl shadow-2xl border-4 border-white/60 bg-white/30 backdrop-blur-xl"
+                priority
+              />
+            </div>
             {/* Features as horizontal cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full mt-8 animate-fade-in-delay3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
               <div className="flex flex-col items-center bg-white/80 rounded-xl p-4 shadow border border-lime-100 min-w-[160px]">
                 <div className="bg-lime-100 p-2 rounded-full mb-2">
                   <Leaf className="h-5 w-5 text-lime-600" />
@@ -79,19 +94,6 @@ export function HeroSection() {
                 <h3 className="font-semibold text-emerald-900">Fast Delivery</h3>
                 <p className="text-sm text-emerald-700 text-center">Same day delivery available</p>
               </div>
-            </div>
-          </div>
-          {/* Right: Product Image with floating animation */}
-          <div className="flex-1 flex items-center justify-center">
-            <div className="relative animate-float-updown">
-              <Image
-                src="/placeholder.svg?height=400&width=400"
-                alt="Fresh organic vegetables and fruits"
-                width={400}
-                height={400}
-                className="rounded-3xl shadow-2xl border-4 border-white/60 bg-white/30 backdrop-blur-xl"
-                priority
-              />
             </div>
           </div>
         </div>
