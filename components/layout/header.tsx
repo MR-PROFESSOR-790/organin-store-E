@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ShoppingCart, User, Menu, X, Search, Settings } from "lucide-react"
+import { ShoppingCart, User, Menu, X, Search, Settings, Leaf } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -34,13 +34,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/placeholder.svg?height=40&width=120"
-              alt="Organic Store"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
-            />
+            <div className="bg-gradient-to-tr from-lime-400 to-emerald-400 rounded-full p-2 shadow-md">
+              <Leaf className="h-8 w-8 text-white" />
+            </div>
+            <span className="ml-2 text-xl font-extrabold text-emerald-700 tracking-tight" style={{fontFamily: 'Poppins, Inter, sans-serif'}}>Organin</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-white">
+    <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-white animate-product-fade-in">
       <CardContent className="p-0">
         <div className="relative overflow-hidden rounded-t-lg">
           <Link href={`/product/${product.id}`}>

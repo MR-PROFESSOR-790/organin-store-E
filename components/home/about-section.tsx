@@ -4,14 +4,14 @@ import { Leaf, Users, Award, Heart } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-lime-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Why Choose <span className="text-blue-600">Organic Store</span>?
+                Why Choose <span className="text-lime-600">Organic Store</span>?
               </h2>
               <p className="text-lg text-gray-600">
                 We're committed to providing you with the highest quality organic products while supporting sustainable
@@ -21,8 +21,8 @@ export function AboutSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-start space-x-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <Leaf className="h-5 w-5 text-blue-600" />
+                <div className="bg-lime-100 p-2 rounded-full">
+                  <Leaf className="h-5 w-5 text-lime-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Sustainable</h3>
@@ -30,8 +30,8 @@ export function AboutSection() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <Users className="h-5 w-5 text-blue-600" />
+                <div className="bg-lime-100 p-2 rounded-full">
+                  <Users className="h-5 w-5 text-lime-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Community</h3>
@@ -39,8 +39,8 @@ export function AboutSection() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="bg-purple-100 p-2 rounded-full">
-                  <Award className="h-5 w-5 text-purple-600" />
+                <div className="bg-amber-100 p-2 rounded-full">
+                  <Award className="h-5 w-5 text-amber-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Certified</h3>
@@ -48,8 +48,8 @@ export function AboutSection() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="bg-purple-100 p-2 rounded-full">
-                  <Heart className="h-5 w-5 text-purple-600" />
+                <div className="bg-amber-100 p-2 rounded-full">
+                  <Heart className="h-5 w-5 text-amber-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Health</h3>
@@ -58,7 +58,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">Learn More About Us</Button>
+            <Button className="bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white">Learn More About Us</Button>
           </div>
 
           {/* Right Content - Image */}

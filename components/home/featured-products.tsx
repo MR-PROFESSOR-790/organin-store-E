@@ -47,7 +47,7 @@ const featuredProducts = [
 
 export function FeaturedProducts() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-lime-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
@@ -64,7 +64,7 @@ export function FeaturedProducts() {
 
         <div className="text-center">
           <Link href="/shop">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button size="lg" className="bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white">
               View All Products
             </Button>
           </Link>
