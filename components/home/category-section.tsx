@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { ProductCard } from "@/components/product/product-card" // Assuming this is imported from your previous code
 
 const categories = [
   {
@@ -35,6 +36,50 @@ const categories = [
   },
 ]
 
+// Placeholder product data (replace with your actual data)
+const products = [
+  {
+    id: "1",
+    name: "Almond Milk",
+    price: 6.99,
+    originalPrice: null,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4.5,
+    reviews: 203,
+    badge: null,
+  },
+  {
+    id: "2",
+    name: "Coconut Oil",
+    price: 14.99,
+    originalPrice: 17.99,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4.6,
+    reviews: 145,
+    badge: "Sale",
+  },
+  {
+    id: "3",
+    name: "Fresh Spinach",
+    price: 4.99,
+    originalPrice: null,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4.4,
+    reviews: 89,
+    badge: "New",
+  },
+  {
+    id: "4",
+    name: "Best Seller",
+    price: 9.99,
+    originalPrice: null,
+    image: "/placeholder.svg?height=300&width=300",
+    rating: 4.7,
+    reviews: 120,
+    badge: null,
+  },
+]
+
 export function CategorySection() {
   return (
     <section className="py-16 bg-gray-50">
@@ -49,7 +94,7 @@ export function CategorySection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
             <Link key={category.id} href={category.href}>
-              <Card className="group animate-float hover:shadow-lg transition-all duration-300 border border-teal-200 bg-white hover:bg-green-50 transform hover:-translate-y-2 rounded-xl">
+              <Card className="group animate-category-float hover:shadow-lg transition-all duration-300 border border-teal-200 bg-white hover:bg-green-50 transform hover:-translate-y-2 rounded-xl">
                 <CardContent className="p-6 text-center">
                   <div className="relative mb-4 overflow-hidden rounded-full mx-auto w-32 h-32 bg-teal-50">
                     <Image
