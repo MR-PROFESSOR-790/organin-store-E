@@ -42,7 +42,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 max-w-7xl mx-auto">
       {/* Product Images */}
       <div className="space-y-4">
-        <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 shadow-sm">
+        <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 shadow-sm animate-float transform hover:-translate-y-2">
           <Image
             src={product.images[selectedImage] || "/placeholder.svg"}
             alt={product.name}
@@ -56,8 +56,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               key={index}
               onClick={() => setSelectedImage(index)}
               className={`relative aspect-square overflow-hidden rounded-lg border-2 transition-all duration-200 ${
-                selectedImage === index ? "border-blue-500 shadow-md" : "border-gray-200 hover:border-blue-300"
-              }`}
+                selectedImage === index
+                  ? "border-green-500 shadow-md"
+                  : "border-gray-200 hover:border-teal-300"
+              } animate-float transform hover:-translate-y-1`}
             >
               <Image
                 src={image || "/placeholder.svg"}
@@ -73,10 +75,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
       {/* Product Info */}
       <div className="space-y-6">
         <div>
-          <Badge className="mb-3 bg-blue-600 hover:bg-blue-700 text-white text-sm">
+          <Badge className="mb-3 bg-teal-500 hover:bg-teal-600 text-white text-sm">
             {product.category}
           </Badge>
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">{product.name}</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-3">{product.name}</h1>
 
           <div className="flex items-center space-x-4 mb-4">
             <div className="flex items-center space-x-1">
@@ -85,23 +87,23 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                   key={i}
                   className={`h-5 w-5 ${
                     i < Math.floor(product.rating)
-                      ? "fill-yellow-400 text-yellow-400"
-                      : "fill-gray-200 text-gray-200"
+                      ? "fill-yellow-500 text-yellow-500"
+                      : "fill-gray-300 text-gray-300"
                   }`}
                 />
               ))}
-              <span className="text-sm text-gray-500 ml-2">
+              <span className="text-sm text-gray-600 ml-2">
                 {product.rating} ({product.reviews} reviews)
               </span>
             </div>
           </div>
 
           <div className="flex items-center space-x-4 mb-6">
-            <span className="text-3xl font-semibold text-gray-900">
+            <span className="text-3xl font-semibold text-gray-800">
               ${product.price.toFixed(2)}
             </span>
             {product.originalPrice && (
-              <span className="text-lg text-gray-400 line-through">
+              <span className="text-lg text-gray-500 line-through">
                 ${product.originalPrice.toFixed(2)}
               </span>
             )}
@@ -113,13 +115,13 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
           {/* Features */}
           <div className="mb-6">
-            <h3 className="font-semibold text-lg text-gray-900 mb-3">
+            <h3 className="font-semibold text-lg text-gray-800 mb-3">
               Key Features:
             </h3>
             <ul className="space-y-3">
               {product.features.map((feature, index) => (
                 <li key={index} className="flex items-center space-x-3">
-                  <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-teal-500 rounded-full"></div>
                   <span className="text-gray-600 text-sm">{feature}</span>
                 </li>
               ))}
@@ -158,7 +160,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <Button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold rounded-lg py-6"
+                className="flex-1 bg-green-500 hover:bg-green-600 text-white text-base font-semibold rounded-lg py-6 transition-colors"
               >
                 <ShoppingCart className="h-5 w-5 mr-2" />
                 {product.inStock ? "Add to Cart" : "Out of Stock"}
@@ -166,7 +168,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <Button
                 variant="outline"
                 size="icon"
-                className="border-gray-200 hover:border-blue-500 hover:text-blue-500 rounded-lg"
+                className="border-teal-200 hover:border-teal-500 hover:text-teal-500 rounded-lg transition-colors"
               >
                 <Heart className="h-5 w-5" />
               </Button>

@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 border border-gray-100 bg-white rounded-xl overflow-hidden">
+    <Card className="group animate-float hover:shadow-lg transition-all duration-300 border border-teal-200 bg-white rounded-xl overflow-hidden transform hover:-translate-y-2">
       <CardContent className="p-0">
         <div className="relative overflow-hidden">
           <Link href={`/product/${product.id}`}>
@@ -51,10 +51,10 @@ export function ProductCard({ product }: ProductCardProps) {
             <Badge
               className={`absolute top-3 left-3 text-xs font-semibold ${
                 product.badge === "Sale"
-                  ? "bg-red-600 hover:bg-red-700"
+                  ? "bg-orange-500 hover:bg-orange-600"
                   : product.badge === "New"
-                  ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-green-600 hover:bg-green-700"
+                  ? "bg-teal-500 hover:bg-teal-600"
+                  : "bg-green-500 hover:bg-green-600"
               } text-white`}
             >
               {product.badge}
@@ -64,7 +64,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="p-4 space-y-2">
           <Link href={`/product/${product.id}`}>
-            <h3 className="font-medium text-lg text-gray-800 hover:text-blue-500 transition-colors line-clamp-2">
+            <h3 className="font-medium text-lg text-gray-800 hover:text-green-600 transition-colors line-clamp-2">
               {product.name}
             </h3>
           </Link>
@@ -76,13 +76,13 @@ export function ProductCard({ product }: ProductCardProps) {
                   key={i}
                   className={`h-4 w-4 ${
                     i < Math.floor(product.rating)
-                      ? "fill-yellow-400 text-yellow-400"
-                      : "fill-gray-200 text-gray-200"
+                      ? "fill-yellow-500 text-yellow-500"
+                      : "fill-gray-300 text-gray-300"
                   }`}
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-500">({product.reviews})</span>
+            <span className="text-sm text-gray-600">({product.reviews})</span>
           </div>
 
           <div className="flex items-center justify-between">
@@ -91,7 +91,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 ${product.price.toFixed(2)}
               </span>
               {product.originalPrice && (
-                <span className="text-sm text-gray-400 line-through">
+                <span className="text-sm text-gray-500 line-through">
                   ${product.originalPrice.toFixed(2)}
                 </span>
               )}
@@ -99,7 +99,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Button
               size="icon"
               onClick={handleAddToCart}
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10"
+              className="bg-green-500 hover:bg-green-600 text-white rounded-full w-10 h-10 transition-colors"
             >
               <ShoppingCart className="h-5 w-5" />
             </Button>
