@@ -189,7 +189,7 @@ export function CheckoutForm() {
         </Label>
       </div>
 
-      <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 py-3">
+      <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3">
         Complete Order
       </Button>
     </form>

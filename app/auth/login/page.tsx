@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
@@ -28,7 +28,7 @@ export default function LoginPage() {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 Don't have an account?{" "}
-                <Link href="/auth/signup" className="text-green-600 hover:text-green-700 font-medium">
+                <Link href="/auth/signup" className="text-blue-600 hover:text-blue-700 font-medium">
                   Sign up
                 </Link>
               </p>

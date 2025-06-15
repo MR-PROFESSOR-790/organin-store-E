@@ -24,7 +24,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           variant={currentPage === page ? "default" : "outline"}
           size="icon"
           onClick={() => onPageChange(page)}
-          className={currentPage === page ? "bg-green-600 hover:bg-green-700" : ""}
+          className={currentPage === page ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" : ""}
         >
           {page}
         </Button>

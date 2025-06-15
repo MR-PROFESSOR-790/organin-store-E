@@ -217,7 +217,7 @@ export function UserProfile() {
                         <div className="flex items-center space-x-2 mb-2">
                           <h3 className="font-semibold">{address.name}</h3>
                           {address.isDefault && (
-                            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Default</span>
+                            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Default</span>
                           )}
                         </div>
                         <p className="text-gray-600 text-sm">
@@ -262,7 +262,7 @@ export function UserProfile() {
                   <CreditCard className="h-5 w-5" />
                   <span>Payment Methods</span>
                 </CardTitle>
-                <Button className="bg-green-600 hover:bg-green-700">Add Payment Method</Button>
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">Add Payment Method</Button>
               </div>
             </CardHeader>
             <CardContent>
@@ -279,7 +279,7 @@ export function UserProfile() {
                           <p className="text-sm text-gray-600">Expires {method.expiry}</p>
                         </div>
                         {method.isDefault && (
-                          <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Default</span>
+                          <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Default</span>
                         )}
                       </div>
                       <div className="flex space-x-2">

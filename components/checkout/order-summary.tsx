@@ -52,9 +52,9 @@ export function OrderSummary() {
         </div>
 
         {/* Shipping Info */}
-        <div className="bg-green-50 p-3 rounded-lg">
-          <p className="text-sm text-green-800">🚚 Free shipping on orders over $50</p>
-          <p className="text-xs text-green-600 mt-1">Estimated delivery: 2-3 business days</p>
+        <div className="bg-blue-50 p-3 rounded-lg">
+          <p className="text-sm text-blue-800">🚚 Free shipping on orders over $50</p>
+          <p className="text-xs text-blue-600 mt-1">Estimated delivery: 2-3 business days</p>
         </div>
       </CardContent>
     </Card>

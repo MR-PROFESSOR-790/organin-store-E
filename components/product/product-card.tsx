@@ -60,7 +60,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="p-4 space-y-3">
           <Link href={`/product/${product.id}`}>
-            <h3 className="font-semibold text-gray-900 hover:text-green-600 transition-colors">{product.name}</h3>
+            <h3 className="font-semibold text-gray-900 hover:text-blue-600 transition-colors">{product.name}</h3>
           </Link>
 
           <div className="flex items-center space-x-1">
@@ -84,7 +84,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 <span className="text-sm text-gray-500 line-through">${product.originalPrice.toFixed(2)}</span>
               )}
             </div>
-            <Button size="sm" onClick={handleAddToCart} className="bg-green-600 hover:bg-green-700">
+            <Button size="sm" onClick={handleAddToCart} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
               <ShoppingCart className="h-4 w-4" />
             </Button>
           </div>

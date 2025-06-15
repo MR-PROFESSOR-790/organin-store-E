@@ -112,7 +112,7 @@ export function ChatBot() {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg z-50 animate-bounce"
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg z-50 animate-bounce"
           size="icon"
         >
           <MessageCircle className="h-6 w-6 text-white" />
@@ -126,14 +126,14 @@ export function ChatBot() {
             isMinimized ? "h-14" : "h-96"
           }`}
         >
-          <CardHeader className="bg-green-600 text-white p-3 rounded-t-lg">
+          <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-t-lg">
             <div className="flex items-center justify-between">
               <CardTitle className="text-sm font-medium">Organic Store Assistant</CardTitle>
               <div className="flex items-center space-x-1">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-6 w-6 text-white hover:bg-green-700"
+                  className="h-6 w-6 text-white hover:bg-blue-700"
                   onClick={() => setIsMinimized(!isMinimized)}
                 >
                   <Minimize2 className="h-3 w-3" />
@@ -141,7 +141,7 @@ export function ChatBot() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-6 w-6 text-white hover:bg-green-700"
+                  className="h-6 w-6 text-white hover:bg-blue-700"
                   onClick={() => setIsOpen(false)}
                 >
                   <X className="h-3 w-3" />
@@ -162,7 +162,9 @@ export function ChatBot() {
                     >
                       <div
                         className={`max-w-[80%] p-3 rounded-lg text-sm ${
-                          message.sender === "user" ? "bg-green-600 text-white" : "bg-gray-100 text-gray-900"
+                          message.sender === "user"
+                            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                            : "bg-gray-100 text-gray-900"
                         }`}
                       >
                         {message.text}
@@ -205,7 +207,7 @@ export function ChatBot() {
                     onClick={sendMessage}
                     disabled={isLoading || !inputValue.trim()}
                     size="icon"
-                    className="bg-green-600 hover:bg-green-700"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                   >
                     <Send className="h-4 w-4" />
                   </Button>

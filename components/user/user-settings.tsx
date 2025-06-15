@@ -319,7 +319,7 @@ export function UserSettings() {
                 </div>
               </div>
 
-              <Button onClick={() => saveSettings("Preference")} className="bg-green-600 hover:bg-green-700">
+              <Button onClick={() => saveSettings("Preference")} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
                 Save Preferences
               </Button>
             </CardContent>

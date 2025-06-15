@@ -108,7 +108,7 @@ export function CartContent() {
 
             <div className="space-y-3">
               <Link href="/checkout" className="block">
-                <Button className="w-full bg-green-600 hover:bg-green-700">Proceed to Checkout</Button>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">Proceed to Checkout</Button>
               </Link>
               <Link href="/shop" className="block">
                 <Button variant="outline" className="w-full">
