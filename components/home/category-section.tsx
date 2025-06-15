@@ -91,12 +91,12 @@ export function CategorySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch py-6">
           {categories.map((category) => (
             <Link key={category.id} href={category.href}>
-              <Card className="group animate-category-float hover:shadow-lg transition-all duration-300 border border-teal-200 bg-white hover:bg-green-50 transform hover:-translate-y-2 rounded-xl">
-                <CardContent className="p-6 text-center">
-                  <div className="relative mb-4 overflow-hidden rounded-full mx-auto w-32 h-32 bg-teal-50">
+              <Card className="group animate-category-float hover:shadow-lg transition-all duration-300 border border-teal-200 bg-white hover:bg-green-50 transform hover:-translate-y-2 rounded-2xl h-full min-h-[270px] min-w-[230px] max-w-[320px] mx-auto">
+                <CardContent className="p-8 text-center flex flex-col items-center justify-center h-full">
+                  <div className="relative mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 bg-teal-50">
                     <Image
                       src={category.image || "/placeholder.svg"}
                       alt={category.name}
@@ -104,8 +104,8 @@ export function CategorySection() {
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{category.name}</h3>
-                  <p className="text-sm text-gray-600">{category.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{category.name}</h3>
+                  <p className="text-base text-gray-600">{category.description}</p>
                 </CardContent>
               </Card>
             </Link>

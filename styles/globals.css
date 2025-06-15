@@ -156,3 +156,21 @@ body {
     transform: translateY(0px);
   }
 }
+
+@keyframes categoryFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  30% {
+    transform: translateY(-12px) scale(1.04);
+  }
+  60% {
+    transform: translateY(6px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+.animate-category-float {
+  animation: categoryFloat 2.8s cubic-bezier(.4,2,.6,1) infinite;
+}

@@ -31,13 +31,13 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 mt-8 mb-8 flex flex-col h-full justify-stretch">
       {/* Category Filter */}
-      <Card>
-        <CardHeader>
+      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg">Category</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="pt-0">
           <RadioGroup value={filters.category} onValueChange={(value) => updateFilters("category", value)}>
             {categories.map((category) => (
               <div key={category.id} className="flex items-center space-x-2">
@@ -52,11 +52,11 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
       </Card>
 
       {/* Price Filter */}
-      <Card>
-        <CardHeader>
+      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg">Price Range</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="pt-0">
           <div className="space-y-4">
             <Slider
               value={filters.priceRange}
@@ -75,11 +75,11 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
       </Card>
 
       {/* Rating Filter */}
-      <Card>
-        <CardHeader>
+      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg">Minimum Rating</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="pt-0">
           <RadioGroup
             value={filters.rating.toString()}
             onValueChange={(value) => updateFilters("rating", Number.parseInt(value))}
