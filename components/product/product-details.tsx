@@ -39,24 +39,24 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 max-w-7xl mx-auto">
       {/* Product Images */}
       <div className="space-y-4">
-        <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+        <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 shadow-sm">
           <Image
             src={product.images[selectedImage] || "/placeholder.svg"}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-4 gap-3">
           {product.images.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className={`relative aspect-square overflow-hidden rounded-lg border-2 ${
-                selectedImage === index ? "border-green-600" : "border-gray-200"
+              className={`relative aspect-square overflow-hidden rounded-lg border-2 transition-all duration-200 ${
+                selectedImage === index ? "border-blue-500 shadow-md" : "border-gray-200 hover:border-blue-300"
               }`}
             >
               <Image
@@ -73,42 +73,54 @@ export function ProductDetails({ product }: ProductDetailsProps) {
       {/* Product Info */}
       <div className="space-y-6">
         <div>
-          <Badge className="mb-2">{product.category}</Badge>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+          <Badge className="mb-3 bg-blue-600 hover:bg-blue-700 text-white text-sm">
+            {product.category}
+          </Badge>
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">{product.name}</h1>
 
           <div className="flex items-center space-x-4 mb-4">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`h-4 w-4 ${
-                    i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                  className={`h-5 w-5 ${
+                    i < Math.floor(product.rating)
+                      ? "fill-yellow-400 text-yellow-400"
+                      : "fill-gray-200 text-gray-200"
                   }`}
                 />
               ))}
-              <span className="text-sm text-gray-600 ml-2">
+              <span className="text-sm text-gray-500 ml-2">
                 {product.rating} ({product.reviews} reviews)
               </span>
             </div>
           </div>
 
           <div className="flex items-center space-x-4 mb-6">
-            <span className="text-3xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
+            <span className="text-3xl font-semibold text-gray-900">
+              ${product.price.toFixed(2)}
+            </span>
             {product.originalPrice && (
-              <span className="text-xl text-gray-500 line-through">${product.originalPrice.toFixed(2)}</span>
+              <span className="text-lg text-gray-400 line-through">
+                ${product.originalPrice.toFixed(2)}
+              </span>
             )}
           </div>
 
-          <p className="text-gray-600 mb-6">{product.description}</p>
+          <p className="text-gray-600 text-base leading-relaxed mb-6">
+            {product.description}
+          </p>
 
           {/* Features */}
           <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Key Features:</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-lg text-gray-900 mb-3">
+              Key Features:
+            </h3>
+            <ul className="space-y-3">
               {product.features.map((feature, index) => (
-                <li key={index} className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600">{feature}</span>
+                <li key={index} className="flex items-center space-x-3">
+                  <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                  <span className="text-gray-600 text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -117,19 +129,27 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           {/* Quantity and Add to Cart */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <span className="font-medium">Quantity:</span>
-              <div className="flex items-center border rounded-lg">
+              <span className="font-medium text-gray-700">Quantity:</span>
+              <div className="flex items-center border border-gray-200 rounded-lg">
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   disabled={quantity <= 1}
+                  className="hover:bg-gray-100"
                 >
-                  <Minus className="h-4 w-4" />
+                  <Minus className="h-5 w-5 text-gray-600" />
                 </Button>
-                <span className="px-4 py-2 font-medium">{quantity}</span>
-                <Button variant="ghost" size="icon" onClick={() => setQuantity(quantity + 1)}>
-                  <Plus className="h-4 w-4" />
+                <span className="px-6 py-2 font-medium text-gray-800">
+                  {quantity}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="hover:bg-gray-100"
+                >
+                  <Plus className="h-5 w-5 text-gray-600" />
                 </Button>
               </div>
             </div>
@@ -138,13 +158,17 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <Button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className="flex-1 bg-green-600 hover:bg-green-700"
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold rounded-lg py-6"
               >
-                <ShoppingCart className="h-4 w-4 mr-2" />
+                <ShoppingCart className="h-5 w-5 mr-2" />
                 {product.inStock ? "Add to Cart" : "Out of Stock"}
               </Button>
-              <Button variant="outline" size="icon">
-                <Heart className="h-4 w-4" />
+              <Button
+                variant="outline"
+                size="icon"
+                className="border-gray-200 hover:border-blue-500 hover:text-blue-500 rounded-lg"
+              >
+                <Heart className="h-5 w-5" />
               </Button>
             </div>
           </div>

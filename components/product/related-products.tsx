@@ -1,3 +1,5 @@
+"use client"
+
 import { ProductCard } from "@/components/product/product-card"
 
 const relatedProducts = [
@@ -50,12 +52,16 @@ interface RelatedProductsProps {
 
 export function RelatedProducts({ categoryId, currentProductId }: RelatedProductsProps) {
   return (
-    <section className="py-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {relatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-10">Related Products</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {relatedProducts
+            .filter((product) => product.id !== currentProductId)
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+        </div>
       </div>
     </section>
   )
