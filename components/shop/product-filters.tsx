@@ -31,9 +31,9 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
   }
 
   return (
-    <div className="space-y-8 mt-8 mb-8 flex flex-col h-full justify-stretch">
+    <div className="flex flex-col h-full justify-between gap-8">
       {/* Category Filter */}
-      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+      <Card className="min-h-[140px] flex-1 flex flex-col justify-center p-6">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg">Category</CardTitle>
         </CardHeader>
@@ -52,7 +52,7 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
       </Card>
 
       {/* Price Filter */}
-      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+      <Card className="min-h-[140px] flex-1 flex flex-col justify-center p-6">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg">Price Range</CardTitle>
         </CardHeader>
@@ -75,7 +75,7 @@ export function ProductFilters({ filters, onFiltersChange }: ProductFiltersProps
       </Card>
 
       {/* Rating Filter */}
-      <Card className="min-h-[140px] flex flex-col justify-center p-6">
+      <Card className="min-h-[140px] flex-1 flex flex-col justify-center p-6">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg">Minimum Rating</CardTitle>
         </CardHeader>
