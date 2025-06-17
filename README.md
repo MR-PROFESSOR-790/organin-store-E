@@ -155,7 +155,7 @@ This project is licensed under the MIT License -
 ## 📧 Contact
 
 
-Project Link: [https://github.com/yourusername/organin-store-E](https://github.com/yourusername/organin-store-E)
+Project Link: https://github.com/MR-PROFESSOR-790/organin-store-E
 
 ## 🙏 Acknowledgments
 
