@@ -47,7 +47,7 @@ A modern e-commerce platform specializing in organic and eco-friendly products, 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/organin-store-E.git
+git clone https://github.com/MR-PROFESSOR-790/organin-store-E
 cd organin-store-E
 ```
 
